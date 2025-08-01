@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Wowo Kesumo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle, rgba(59,130,246,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary);
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-blue-500">WOWO KESUMO</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-500 transition">Tentang Saya</a>
+                    <a href="#skills" class="text-gray-800 hover:text-blue-500 transition">Keterampilan</a>
+                    <a href="#experience" class="text-gray-800 hover:text-blue-500 transition">Pengalaman</a>
+                    <a href="#projects" class="text-gray-800 hover:text-blue-500 transition">Proyek</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-500 transition">Kontak</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-2 py-2 space-y-2" id="mobile-menu">
+                <a href="#home" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Home</a>
+                <a href="#about" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Tentang Saya</a>
+                <a href="#skills" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Keterampilan</a>
+                <a href="#experience" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Pengalaman</a>
+                <a href="#projects" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Proyek</a>
+                <a href="#contact" class="block px-3 py-1 text-gray-800 hover:text-blue-500">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Muhammad Wowo Kesumo</h1>
+                    <h2 class="text-2xl md:text-3xl text-blue-500 mb-6">Teknisi Listrik Professional</h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Lulusan SMK Negeri 2 Plaihari dengan spesialisasi di bidang teknik instalasi tenaga listrik. 
+                        Memiliki pengalaman luas di berbagai proyek kelistrikan dan instrumentasi industri.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">Hubungi Saya</a>
+                        <a href="#projects" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">Lihat Proyek</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-xl">
+                        <img src="https://placehold.co/600x600" alt="Potret profesional Muhammad Wowo Kesumo dengan latar belakang industri, mengenakan seragam kerja lengkap dengan safety helmet" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Tentang Saya</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://placehold.co/800x600" alt="Muhammad Wowo Kesumo sedang bekerja di lokasi proyek instalasi listrik, memeriksa panel kontrol" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Profil Professional</h3>
+                        <p class="text-gray-600 mb-6">
+                            Saya adalah lulusan SMK Negeri 2 Plaihari, Kabupaten Tanah Laut, Kalimantan Selatan dengan jurusan Teknik Instalasi Tenaga Listrik (tahun ajaran 2023-2024). 
+                            Memiliki pengalaman praktik langsung di berbagai proyek instalasi listrik dan bekerja di perusahaan energi ternama.
+                        </p>
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-800 mb-2">Informasi Pribadi:</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li><span class="font-medium">Tanggal Lahir:</span> 11 Desember 2002</li>
+                                <li><span class="font-medium">Email:</span> mwkmwk36@gmail.com</li>
+                                <li><span class="font-medium">Telepon:</span> 083117599100</li>
+                                <li><span class="font-medium">Alamat:</span> Kabupaten Tanah Laut, Kalimantan Selatan</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800 mb-2">Keahlian Utama:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PLC Programming</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Smart Relay</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Motor 3 Phase</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Instalasi Panel</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Pendidikan</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative pl-8 timeline-item">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white -ml-2 mt-1 z-10"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800">SMK Negeri 2 Plaihari</h3>
+                        <p class="text-gray-600 mb-2">Jurusan Teknik Instalasi Tenaga Listrik</p>
+                        <p class="text-gray-500 text-sm">Tahun Ajaran 2023-2024</p>
+                        <p class="text-gray-600 mt-3">
+                            Selama pendidikan, mempelajari berbagai aspek teknik listrik termasuk instalasi, pemeliharaan, 
+                            PLC (Programmable Logic Controller), Smart Relay, dan sistem kontrol motor 3 phase.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Keterampilan Teknis</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Technical Skills -->
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Instalasi Listrik</h3>
+                    <p class="text-gray-600">
+                        Pengalaman dalam instalasi sistem kelistrikan bangunan termasuk pemasangan panel kontrol, 
+                        wiring diagram, dan sistem proteksi listrik.
+                    </p>
+                </div>
+
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">PLC & Smart Relay</h3>
+                    <p class="text-gray-600">
+                        Kemampuan pemrograman PLC dan Smart Relay untuk kontrol industri, termasuk pemrograman 
+                        motor forward reverse dan sistem kontrol berurutan.
+                    </p>
+                </div>
+
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Troubleshooting</h3>
+                    <p class="text-gray-600">
+                        Keahlian dalam mendiagnosis dan memperbaiki masalah sistem kelistrikan, 
+                        termasuk fault finding dan analisis sistem kontrol.
+                    </p>
+                </div>
+
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Kontrol Motor 3 Phase</h3>
+                    <p class="text-gray-600">
+                        Pengalaman dalam merancang dan mengimplementasikan rangkaian kontrol motor 3 phase 
+                        termasuk sistem star-delta dan forward-reverse.
+                    </p>
+                </div>
+
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Keselamatan Listrik</h3>
+                    <p class="text-gray-600">
+                        Pengetahuan mendalam tentang standard keselamatan kerja kelistrikan, 
+                        termasuk prosedur LOTO (Lock Out Tag Out) dan PPE.
+                    </p>
+                </div>
+
+                <div class="skill-card bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Kemampuan Pendukung</h3>
+                    <p class="text-gray-600">
+                        Kemampuan teknis pendukung termasuk penggunaan alat ukur listrik, 
+                        pembacaan schematic diagram, dan penggunaan software dasar seperti Microsoft Office.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Pengalaman Kerja</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- BGMPA Current -->
+                <div class="relative pl-8 timeline-item mb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white -ml-2 mt-4 z-10"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between">
+                            <h3 class="text-xl font-semibold text-gray-800">PT BGMPA (Batu Gunung Mulia Putera Agro)</h3>
+                            <span class="text-blue-500 font-medium">Nov 2024 - Sekarang</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Teknisi Listrik</p>
+                        <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                            <li>Melakukan pemeliharaan preventif sistem kelistrikan pabrik</li>
+                            <li>Memperbaiki dan memelihara sistem kontrol motor industri</li>
+                            <li>Melakukan troubleshooting sistem kontrol otomatis</li>
+                            <li>Memastikan compliance dengan standard keselamatan kerja</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sukses Wijaya -->
+                <div class="relative pl-8 timeline-item mb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white -ml-2 mt-4 z-10"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between">
+                            <h3 class="text-xl font-semibold text-gray-800">PT Sukses Wijaya Adi Makmur</h3>
+                            <span class="text-blue-500 font-medium">Feb 2024 - Nov 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Teknisi Elektrik</p>
+                        <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                            <li>Instalasi sistem kelistrikan bangunan industri</li>
+                            <li>Pemeliharaan panel kontrol dan sistem distribusi daya</li>
+                            <li>Pemasangan dan pengujian sistem grounding</li>
+                            <li>Sistem kontrol motor industri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BGMPA Magang -->
+                <div class="relative pl-8 timeline-item mb-12">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white -ml-2 mt-4 z-10"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between">
+                            <h3 class="text-xl font-semibold text-gray-800">PT BGMPA (Magang)</h3>
+                            <span class="text-blue-500 font-medium">6 Bulan</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Bagian Elektrik dan Mekanik</p>
+                        <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                            <li>Pemagangan berbasis pengguna yang diadakan oleh Disnaker Tanah Laut</li>
+                            <li>Belajar langsung sistem kelistrikan industri pengolahan</li>
+                            <li>Pemeliharaan peralatan elektromekanik</li>
+                            <li>Praktek sistem kontrol otomatis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PLTU Asam Asam -->
+                <div class="relative pl-8 timeline-item">
+                    <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white -ml-2 mt-4 z-10"></div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between">
+                            <h3 class="text-xl font-semibold text-gray-800">PLTU Asam Asam - PT PLN Indonesia Power</h3>
+                            <span class="text-blue-500 font-medium">4 Bulan</span>
+                        </div>
+                        <p class="text-gray-600 mb-2">Praktek Kerja Lapangan</p>
+                        <div class="flex flex-wrap gap-4 mb-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2 Bulan - Instrumentasi</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2 Bulan - Listrik</span>
+                        </div>
+                        <ul class="text-gray-600 list-disc pl-5 space-y-1">
+                            <li>Mempelajari sistem instrumentasi pembangkit listrik</li>
+                            <li>Praktek sistem kontrol PLTU</li>
+                            <li>Monitoring parameter operasional pembangkit</li>
+                            <li>Sistem proteksi dan distribusi daya PLN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Proyek & Pencapaian</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Proyek instalasi listrik bangunan kos-kosan dengan berbagai panel distribusi yang terorganisir rapi" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Instalasi Listrik Kos-Kosan</h3>
+                        <p class="text-gray-300 mb-4">
+                            Proyek instalasi listrik bangunan kos-kosan semasa sekolah dengan sistem pengkabelan tertata dan panel distribusi yang efisien.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Instalasi</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Panel Listrik</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Wiring</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Instalasi Listrik Kos-Kosan</h3>
+                        <p class="text-gray-600 text-sm">Proyek Sekolah</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Sistem kontrol motor 3 phase industri dengan rangkaian forward-reverse yang kompleks dalam panel enclosure" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Rangkaian Motor 3 Phase</h3>
+                        <p class="text-gray-300 mb-4">
+                            Implementasi rangkaian kontrol motor 3 phase dengan sistem forward-reverse dan proteksi overload yang lengkap.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Motor 3 Phase</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Forward-Reverse</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Control Panel</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Rangkaian Motor 3 Phase</h3>
+                        <p class="text-gray-600 text-sm">Praktek Sekolah</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Panel kontrol PLC industrial dengan berbagai komponen elektronik seperti contactor, relay, dan HMI interface" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Sistem Kontrol PLC</h3>
+                        <p class="text-gray-300 mb-4">
+                            Perancangan dan implementasi sistem kontrol berbasis PLC untuk aplikasi industri dengan logika kontrol kompleks.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">PLC</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Automation</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Smart Relay</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Sistem Kontrol PLC</h3>
+                        <p class="text-gray-600 text-sm">Praktek Sekolah</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Star delta motor controller dengan wiring diagram terstruktur pada training panel di lingkungan pendidikan" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Star Delta Starter</h3>
+                        <p class="text-gray-300 mb-4">
+                            Implementasi sistem starting motor 3 phase dengan metode star-delta untuk mengurangi arus starting yang tinggi.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Motor Starter</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Star Delta</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">DOL</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Star Delta Starter</h3>
+                        <p class="text-gray-600 text-sm">Praktek Sekolah</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Alat ukur listrik digital dan analog berbagai jenis yang disusun rapi di meja kerja teknisi" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Pengukuran Sistem Listrik</h3>
+                        <p class="text-gray-300 mb-4">
+                            Berbagai praktek pengukuran parameter listrik menggunakan alat ukur seperti multimeter, clamp meter, dan megger.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Pengukuran</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Troubleshooting</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Test Equipment</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Pengukuran Sistem Listrik</h3>
+                        <p class="text-gray-600 text-sm">Praktek Sekolah & Industri</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-md relative">
+                    <img src="https://placehold.co/600x400" alt="Workshop listrik praktik kerja siswa dengan berbagai panel latihan dan modul training yang lengkap" class="w-full h-48 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center p-6 opacity-0 transition duration-300">
+                        <h3 class="text-white text-xl font-semibold mb-2">Praktek Instalasi Industri</h3>
+                        <p class="text-gray-300 mb-4">
+                            Serangkaian proyek praktek instalasi industri selama pendidikan yang mencakup berbagai aspek teknik listrik.
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Industrial</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Wiring</span>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Control System</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Praktek Instalasi Industri</h3>
+                        <p class="text-gray-600 text-sm">Praktek Sekolah & Magang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Hubungi Saya</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Informasi Kontak</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-blue-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Telepon</h4>
+                                    <p class="text-gray-600">083117599100</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-blue-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">mwkmwk36@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-blue-500 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Lokasi</h4>
+                                    <p class="text-gray-600">Kabupaten Tanah Laut, Kalimantan Selatan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Sosial Media</h4>
+                            <div class="flex space-x-4">
+                                <!-- LinkedIn -->
+                                <a href="#" class="bg-gray-100 hover:bg-blue-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-700 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <!-- Instagram -->
+                                <a href="#" class="bg-gray-100 hover:bg-pink-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-700 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <!-- WhatsApp -->
+                                <a href="#" class="bg-gray-100 hover:bg-green-500 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-700 transition">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Kirim Pesan</h3>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subjek</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Pesan</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition w-full">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold text-white">MUHAMMAD WOWO KESUMO</div>
+                    <p class="text-gray-400 mt-1">Teknisi Listrik Professional</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition">Tentang</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition">Keterampilan</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition">Proyek</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Kontak</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Muhammad Wowo Kesumo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Pesan Anda telah terkirim! Saya akan menghubungi Anda segera.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
